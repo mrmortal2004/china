@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 1st Anniversary Nanna 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d6336c;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 0 10%;
+    }
+
+    .heart {
+      font-size: 4em;
+      animation: beat 1s infinite;
+      color: red;
+      margin-top: 20px;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    .slideshow-container {
+      margin: 40px auto;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .letter-button {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .letter-button:hover {
+      background-color: #ff1493;
+    }
+
+    .letter-popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      max-width: 90%;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+
+    .close-btn {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart">❤️</div>
+  <h1>Happy 1st Anniversary Nanna !</h1>
+  <p>One beautiful year down, forever to go. Thank you for all the love and memories. 💑</p>
+
+  <!-- 🎞 Slideshow -->
+  <div class="slideshow-container">
+    <div class="slide"><img src="https://uploads.onecompiler.io/43sp8a2yb/43sp8gbvj/WhatsApp%20Image%202025-08-04%20at%2011.11.30.jpeg" alt="Memory 1"></div>
+    <div class="slide"><img src="https://uploads.onecompiler.io/43sp8a2yb/43sp8gbvj/7032503736.jpeg" alt="Memory 2"></div>
+    <div class="slide"><img src="https://uploads.onecompiler.io/43sp8a2yb/43sp8gbvj/7382476637.jpeg" alt="Memory 3"></div>
+    <!-- Add more slides if needed -->
+  </div>
+
+  <!-- 💌 Letter Button -->
+  <button class="letter-button" onclick="openLetter()">💌 Open My Letter</button>
+
+  <!-- 💌 Letter Popup -->
+  <div class="letter-popup" id="letter">
+    <h2>To My kucchuuuu pucchhuuu ,</h2>
+    <p>
+       Ninnu chusina roju nen rendosarii puttina roju... Endhukante ah roju nundi naaku nene kotthaga kanipisthunna nanna ... NUvvu naa life loki raaka mundhu oka laaga undedhi nanna </p>
+    <p>
+      ochaka oka laaag undhi nanna !...nv raaka mundhu cheppukodaaniki em ledhu.. nuv ochaka prathi min neetho oka best moment laaaga experience chesi neeku express chesi nen ankunnavi anni neetho 
+      share cheskovali ani undhi nanna .. inthaka mundhu antey ammailu antey timepass ki annattu undevadni alntidhi ippudu neetho paatu nee cheyyi patkoni 7 adugulu eyyalani undhi nanna ... okappudu Ive texts inka msgs chusi inthaka mundhu cringe ankunevadni nanan 
+      alantidhi adhey cringe naaku ippuud nee kosame padhey padhey cheyyalani undhi nanna ... Future lo neeku peddha peddha carlu , illulu ,goldu , techi ista ani cheppanu kaani nee kallalo happiness chudataaniki prathi roju , prathi nimisham , prathi kshanam , naa valla ayinantha chesta nanna 
+      Nee venaka undi support chestanu ... nee mundhu undi ne problem ni nen face chestanu ... maa amma laaga chuskunta nanna 
+      
+            Ninnu pelli cheskodaniki mee intlo vallani ela oppinchalo nak telidhu kaani adhi entha kashtamaina enni struggles occhina Aug 20 , 2024 night 10:37PM ki patkunna nee cheyyi ni eppatiki odhalnu ani ipde kadhu eppatiki promise chestune unta nanna 
+            
+  
+    </p>
+    <p>
+      Happy Anniversary Nanna . Here’s to us—today, tomorrow, and always.
+    </p>
+    <p>Forever yours,<br><strong>[Nanii]</strong></p>
+    <button class="close-btn" onclick="closeLetter()">Close</button>
+  </div>
+
+  <!-- 🎵 Background Music -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <div class="footer">Made with ❤️ by [Nanii]</div>
+
+  <script>
+    // 🎞 Slideshow Logic
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    // 💌 Letter Logic
+    function openLetter() {
+      document.getElementById("letter").style.display = "block";
+    }
+
+    function closeLetter() {
+      document.getElementById("letter").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
