@@ -33,12 +33,8 @@
     }
 
     @keyframes beat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
     }
 
     .slideshow-container {
@@ -47,9 +43,7 @@
       position: relative;
     }
 
-    .slide {
-      display: none;
-    }
+    .slide { display: none; }
 
     .slide img {
       width: 100%;
@@ -112,31 +106,27 @@
   <h1>Happy 1st Anniversary Nanna !</h1>
   <p>One beautiful year down, forever to go. Thank you for all the love and memories. 💑</p>
 
-  <!-- 🎞 Slideshow -->
   <div class="slideshow-container">
     <div class="slide"><img src="https://uploads.onecompiler.io/43sp8a2yb/43sp8gbvj/WhatsApp%20Image%202025-08-04%20at%2011.11.30.jpeg" alt="Memory 1"></div>
     <div class="slide"><img src="https://uploads.onecompiler.io/43sp8a2yb/43sp8gbvj/7032503736.jpeg" alt="Memory 2"></div>
     <div class="slide"><img src="https://uploads.onecompiler.io/43sp8a2yb/43sp8gbvj/7382476637.jpeg" alt="Memory 3"></div>
-    <!-- Add more slides if needed -->
   </div>
 
-  <!-- 💌 Letter Button -->
   <button class="letter-button" onclick="openLetter()">💌 Open My Letter</button>
 
-  <!-- 💌 Letter Popup -->
-  <div class="letter-popup" id="letter">
+<div class="letter-popup" id="letter">
     <h2>To My kucchuuuu pucchhuuu ,</h2>
     <p>
-       Ninnu chusina roju nen rendosarii puttina roju... Endhukante ah roju nundi naaku nene kotthaga kanipisthunna nanna ... NUvvu naa life loki raaka mundhu oka laaga undedhi nanna </p>
+      Ninnu chusina roju nen rendosarii puttina roju... Endhukante ah roju nundi naaku nene kotthaga kanipisthunna nanna ... NUvvu naa life loki raaka mundhu oka laaga undedhi nanna 
+    </p>
     <p>
       ochaka oka laaag undhi nanna !...nv raaka mundhu cheppukodaaniki em ledhu.. nuv ochaka prathi min neetho oka best moment laaaga experience chesi neeku express chesi nen ankunnavi anni neetho 
       share cheskovali ani undhi nanna .. inthaka mundhu antey ammailu antey timepass ki annattu undevadni alntidhi ippudu neetho paatu nee cheyyi patkoni 7 adugulu eyyalani undhi nanna ... okappudu Ive texts inka msgs chusi inthaka mundhu cringe ankunevadni nanan 
       alantidhi adhey cringe naaku ippuud nee kosame padhey padhey cheyyalani undhi nanna ... Future lo neeku peddha peddha carlu , illulu ,goldu , techi ista ani cheppanu kaani nee kallalo happiness chudataaniki prathi roju , prathi nimisham , prathi kshanam , naa valla ayinantha chesta nanna 
       Nee venaka undi support chestanu ... nee mundhu undi ne problem ni nen face chestanu ... maa amma laaga chuskunta nanna 
-      
-            Ninnu pelli cheskodaniki mee intlo vallani ela oppinchalo nak telidhu kaani adhi entha kashtamaina enni struggles occhina Aug 20 , 2024 night 10:37PM ki patkunna nee cheyyi ni eppatiki odhalnu ani ipde kadhu eppatiki promise chestune unta nanna 
-            
-  
+    </p>
+    <p>
+      Ninnu pelli cheskodaniki mee intlo vallani ela oppinchalo nak telidhu kaani adhi entha kashtamaina enni struggles occhina Aug 20 , 2024 night 10:37PM ki patkunna nee cheyyi ni eppatiki odhalnu ani ipde kadhu eppatiki promise chestune unta nanna 
     </p>
     <p>
       Happy Anniversary Nanna . Here’s to us—today, tomorrow, and always.
@@ -145,8 +135,9 @@
     <button class="close-btn" onclick="closeLetter()">Close</button>
   </div>
 
+
   <!-- 🎵 Background Music -->
-  <audio autoplay loop>
+  <audio id="bgMusic" autoplay loop>
     <source src="music.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
@@ -154,7 +145,7 @@
   <div class="footer">Made with ❤️ by [Nanii]</div>
 
   <script>
-    // 🎞 Slideshow Logic
+    // Slideshow Logic
     let slideIndex = 0;
     showSlides();
 
@@ -166,10 +157,10 @@
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // Change image every 3 seconds
+      setTimeout(showSlides, 3000);
     }
 
-    // 💌 Letter Logic
+    // Letter Logic
     function openLetter() {
       document.getElementById("letter").style.display = "block";
     }
@@ -177,6 +168,15 @@
     function closeLetter() {
       document.getElementById("letter").style.display = "none";
     }
+
+    // Autoplay music on first click (bypass Chrome restriction)
+    document.addEventListener("click", function () {
+      const bgMusic = document.getElementById("bgMusic");
+      bgMusic.muted = false;
+      bgMusic.play().catch(e => {
+        console.log("Autoplay failed:", e);
+      });
+    }, { once: true });
   </script>
 
 </body>
